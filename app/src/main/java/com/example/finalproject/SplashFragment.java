@@ -46,8 +46,8 @@ public class SplashFragment extends Fragment {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Navigation.findNavController(view).navigate(R.id.action_splash_to_start2);
+                Navigation.findNavController(view).navigate(R.id.action_splashFragment_to_startFrag);
             }
-        }, 3000);
+        }, 4000);
     }
 }

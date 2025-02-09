@@ -8,4 +8,11 @@
     <color name="Frany_Ko7ly">#0C2D3F</color>
     <color name="Fa2e3_Yellow">#F4F631</color>
     <color name="Taxi_Yellow">#FFC700</color>
+
+    //From Adobe Color Palette
+    <color name="Adobe_Yellow">#F2B705</color>
+    <color name="Adobe_Orange">#D97904</color>
+    <color name="Adobe_Red_Background">#D93D3D</color>
+    <color name="Adobe_Pink">#F20544</color>
+    <color name="Adobe_Frany">#042F40</color>
 </resources>
