@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Dark_Red">#B0001E</color>
+    <color name="BackGround_Red">#D63737</color>
+    <color name="Fa2e3_Red">#FB002E</color>
+    <color name="Frany_Ko7ly">#0C2D3F</color>
+    <color name="Fa2e3_Yellow">#F4F631</color>
+    <color name="Taxi_Yellow">#FFC700</color>
 </resources>
