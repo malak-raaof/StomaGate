@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D63C3B"
+    android:background="@color/Adobe_Red_Background"
     tools:context=".StartFrag">
 
     <ImageView
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnStart"
         android:layout_width="199dp"
         android:layout_height="72dp"
         android:layout_marginStart="106dp"

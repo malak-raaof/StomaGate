@@ -20,5 +20,26 @@
         android:id="@+id/startFrag"
         android:name="com.example.finalproject.StartFrag"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" />
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFrag_to_loginFrag"
+            app:destination="@id/loginFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.example.finalproject.LoginFrag"
+        android:label="LoginFrag" >
+        <action
+            android:id="@+id/action_loginFrag_to_signupFrag"
+            app:destination="@id/signupFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFrag"
+        android:name="com.example.finalproject.SignupFrag"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFrag_to_loginFrag"
+            app:destination="@id/loginFrag" />
+    </fragment>
 </navigation>

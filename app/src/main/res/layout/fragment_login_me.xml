@@ -1,14 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Adobe_Red_Background"
     tools:context=".LoginFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="412dp"
+        android:layout_height="317dp"
+        android:src="@drawable/bannar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="199dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/Adobe_Yellow"
+        android:text="@string/login"
+        android:textColor="@color/Frany_Ko7ly"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSignupClick"
+        android:layout_centerHorizontal="true"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_textfield"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/textField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:boxBackgroundMode="none"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/Adobe_Yellow"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="3dp"
+        app:startIconDrawable="@drawable/user2"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="317dp">
+        <!--app:startIconTint="@null"> EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user"
+            android:padding="12dp"
+            android:paddingStart="125dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:hintAnimationEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField2"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_textfield"
+        app:layout_constraintBottom_toTopOf="@+id/txtSignupClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField"
+        app:boxBackgroundMode="none"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/Adobe_Yellow"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="3dp"
+        app:startIconDrawable="@drawable/pass2"
+        app:endIconMode="password_toggle"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="317dp">
+        <!--app:startIconTint="@null"> EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:paddingStart="125dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:hintAnimationEnabled="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/txtSignupClick"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:text="@string/signup"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/textField2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/noaccount"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toStartOf="@+id/txtSignupClick"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnGoogle"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/Adobe_Orange"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/google"
+        android:textColor="@color/Frany_Ko7ly"
+        app:icon="@drawable/google_low"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        android:layout_centerHorizontal="true"/>
+    <!--app:iconTint="@null" EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
+
+    <Button
+        android:id="@+id/btnGuest"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/Adobe_Frany"
+        android:text="@string/guest"
+        android:textColor="@color/white"
+        app:icon="@drawable/mask"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoogle"
+        android:layout_centerHorizontal="true"/>
+    <!--app:iconTint="@null" EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
