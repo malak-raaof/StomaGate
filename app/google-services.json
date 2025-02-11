@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "975034736189",
+    "project_id": "stomagate",
+    "storage_bucket": "stomagate.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975034736189:android:5450a3fbb9160f2eb61454",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDivp0-Q0Qetek7GxQwDxLx1nf-wqMwbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

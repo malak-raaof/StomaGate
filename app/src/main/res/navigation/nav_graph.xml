@@ -26,14 +26,6 @@
             app:destination="@id/loginFrag" />
     </fragment>
     <fragment
-        android:id="@+id/loginFrag"
-        android:name="com.example.finalproject.LoginFrag"
-        android:label="LoginFrag" >
-        <action
-            android:id="@+id/action_loginFrag_to_signupFrag"
-            app:destination="@id/signupFrag" />
-    </fragment>
-    <fragment
         android:id="@+id/signupFrag"
         android:name="com.example.finalproject.SignupFrag"
         android:label="fragment_signup"
@@ -41,5 +33,14 @@
         <action
             android:id="@+id/action_signupFrag_to_loginFrag"
             app:destination="@id/loginFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFrag"
+        android:name="com.example.finalproject.LoginFrag"
+        android:label="fragment_login_me"
+        tools:layout="@layout/fragment_login_me" >
+        <action
+            android:id="@+id/action_loginFrag_to_signupFrag"
+            app:destination="@id/signupFrag" />
     </fragment>
 </navigation>

@@ -123,4 +123,8 @@
     <string name="signup">SignUp here</string>
     <string name="google">Continue With Google</string>
     <string name="guest">Continue As Guest</string>
+    <string name="confirmpass">Confirm Password</string>
+    <string name="fullname">Full Name</string>
+    <string name="signupbtn">Sign Up</string>
+    <string name="alreadylogintxt">Already have an account ? LogIn here</string>
 </resources>
