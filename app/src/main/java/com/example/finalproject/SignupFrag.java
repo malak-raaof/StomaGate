@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -10,10 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignupFrag extends Fragment {
 
@@ -44,6 +50,11 @@ public class SignupFrag extends Fragment {
         textFieldEmail = view.findViewById(R.id.textFieldEmail);
 
         myauth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = myauth.getCurrentUser();
+
+        String password = txtPassword.getText().toString();
+        String confirmPassword = txtConfirmPassword.getText().toString();
+        String email = txtEmail.getText().toString();
 
         txtLoginClick.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.action_signupFrag_to_loginFrag);
@@ -51,10 +62,6 @@ public class SignupFrag extends Fragment {
         });
 
         btnSignUp.setOnClickListener(v -> {
-
-            String password = txtPassword.getText().toString();
-            String confirmPassword = txtConfirmPassword.getText().toString();
-            String email = txtEmail.getText().toString();
 
             if (email.isEmpty()) {
                 textFieldEmail.setError("Field cannot be empty!");
@@ -73,7 +80,7 @@ public class SignupFrag extends Fragment {
                 } else {
                     textFieldPassword.setError(null);
                     textFieldConfirmPassword.setError(null);
-                    // Proceed with signup logic
+                    signUp();
                 }
             }
 
@@ -89,6 +96,21 @@ public class SignupFrag extends Fragment {
 
     private void signUp(){
 
+        myauth.createUserWithEmailAndPassword(txtEmail.getText().toString(),txtPassword.getText().toString())
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        Toast.makeText(getActivity(),"Signed Up successfully", Toast.LENGTH_LONG).show();
+                    }
+                })       .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(),"Failed" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+                }) ;
+
     }
+
 
 }
