@@ -28,7 +28,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_textfield"
         app:boxBackgroundMode="none"
-        app:layout_constraintBottom_toTopOf="@+id/textFieldEmail"
+        app:layout_constraintBottom_toTopOf="@+id/textFieldEmailSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2"
@@ -48,7 +48,7 @@
 
     <!-- Email Field -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFieldEmail"
+        android:id="@+id/textFieldEmailSignup"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -62,7 +62,7 @@
         app:startIconDrawable="@drawable/mail2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtEmailSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/prompt_email"
@@ -83,10 +83,10 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_textfield"
         app:boxBackgroundMode="none"
-        app:layout_constraintBottom_toTopOf="@+id/textFieldPassword"
+        app:layout_constraintBottom_toTopOf="@+id/textFieldPasswordSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textFieldEmail"
+        app:layout_constraintTop_toBottomOf="@id/textFieldEmailSignup"
         app:startIconDrawable="@drawable/user2">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -103,7 +103,7 @@
 
     <!-- Password Field -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFieldPassword"
+        android:id="@+id/textFieldPasswordSignUp"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -118,7 +118,7 @@
         app:startIconDrawable="@drawable/pass2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/txtPasswordSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/pass"
@@ -142,7 +142,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textFieldPassword"
+        app:layout_constraintTop_toBottomOf="@id/textFieldPasswordSignUp"
         app:startIconDrawable="@drawable/pass2">
 
         <com.google.android.material.textfield.TextInputEditText

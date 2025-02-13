@@ -39,7 +39,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/textFieldEmailLogin"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_textfield"
@@ -47,7 +47,7 @@
         android:layout_marginStart="34dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/textField2"
+        app:layout_constraintBottom_toTopOf="@+id/textFieldPasswordLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,12 +66,13 @@
         <!--app:startIconTint="@null"> EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtUsername"
+            android:id="@+id/txtEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/user"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
             android:padding="12dp"
-            android:paddingStart="125dp"
+            android:paddingStart="135dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -79,7 +80,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField2"
+        android:id="@+id/textFieldPasswordLogin"
         android:layout_width="345dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -91,7 +92,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtSignupClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEmailLogin"
         app:boxBackgroundMode="none"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
@@ -107,7 +108,7 @@
         <!--app:startIconTint="@null"> EL LINE DA 34AN ELSOURA TZHAR B LONHA EL ASLY-->
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/txtPasswordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/pass"
@@ -137,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textField2" />
+        app:layout_constraintTop_toBottomOf="@+id/textFieldPasswordLogin" />
 
     <TextView
         android:id="@+id/textView4"
@@ -156,7 +157,7 @@
         app:layout_constraintEnd_toStartOf="@+id/txtSignupClick"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField2"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldPasswordLogin"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button

@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +26,8 @@ public class SignupFrag extends Fragment {
 
     TextView txtLoginClick;
     Button btnSignUp;
-    TextInputEditText txtPassword,txtConfirmPassword,txtEmail;
-    TextInputLayout textFieldPassword,textFieldConfirmPassword,textFieldEmail;
+    TextInputEditText txtPasswordSignup,txtConfirmPassword, txtEmailSignup;
+    TextInputLayout textFieldPasswordSignUp,textFieldConfirmPassword, textFieldEmailSignup;
     private FirebaseAuth myauth;
 
     @Override
@@ -42,19 +43,17 @@ public class SignupFrag extends Fragment {
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
         txtLoginClick = view.findViewById(R.id.txtLoginClick);
         btnSignUp = view.findViewById(R.id.btnSignUp);
-        txtPassword = view.findViewById(R.id.txtPassword);
+        txtPasswordSignup = view.findViewById(R.id.txtPasswordSignup);
         txtConfirmPassword = view.findViewById(R.id.txtConfirmPassword);
         textFieldConfirmPassword = view.findViewById(R.id.textFieldConfirmPassword);
-        textFieldPassword = view.findViewById(R.id.textFieldPassword);
-        txtEmail = view.findViewById(R.id.txtEmail);
-        textFieldEmail = view.findViewById(R.id.textFieldEmail);
+        textFieldPasswordSignUp = view.findViewById(R.id.textFieldPasswordSignUp);
+        txtEmailSignup = view.findViewById(R.id.txtEmailSignup);
+        textFieldEmailSignup = view.findViewById(R.id.textFieldEmailSignup);
 
         myauth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = myauth.getCurrentUser();
 
-        String password = txtPassword.getText().toString();
-        String confirmPassword = txtConfirmPassword.getText().toString();
-        String email = txtEmail.getText().toString();
+
 
         txtLoginClick.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.action_signupFrag_to_loginFrag);
@@ -63,22 +62,26 @@ public class SignupFrag extends Fragment {
 
         btnSignUp.setOnClickListener(v -> {
 
+            String password = txtPasswordSignup.getText().toString();
+            String confirmPassword = txtConfirmPassword.getText().toString();
+            String email = txtEmailSignup.getText().toString();
+
             if (email.isEmpty()) {
-                textFieldEmail.setError("Field cannot be empty!");
+                textFieldEmailSignup.setError("Field cannot be empty!");
             } else {
-                textFieldEmail.setError(null);
+                textFieldEmailSignup.setError(null);
 
                 boolean isPasswordEmpty = password.isEmpty();
                 boolean isConfirmPasswordEmpty = confirmPassword.isEmpty();
 
                 if (isPasswordEmpty || isConfirmPasswordEmpty) {
-                    textFieldPassword.setError(isPasswordEmpty ? "Field cannot be empty!" : null);
+                    textFieldPasswordSignUp.setError(isPasswordEmpty ? "Field cannot be empty!" : null);
                     textFieldConfirmPassword.setError(isConfirmPasswordEmpty ? "Field cannot be empty!" : null);
                 } else if (!password.equals(confirmPassword)) {
                     textFieldConfirmPassword.setError("Passwords do not match!");
-                    textFieldPassword.setError(null);
+                    textFieldPasswordSignUp.setError(null);
                 } else {
-                    textFieldPassword.setError(null);
+                    textFieldPasswordSignUp.setError(null);
                     textFieldConfirmPassword.setError(null);
                     signUp();
                 }
@@ -96,7 +99,7 @@ public class SignupFrag extends Fragment {
 
     private void signUp(){
 
-        myauth.createUserWithEmailAndPassword(txtEmail.getText().toString(),txtPassword.getText().toString())
+        myauth.createUserWithEmailAndPassword(txtEmailSignup.getText().toString(), txtPasswordSignup.getText().toString())
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
@@ -110,6 +113,10 @@ public class SignupFrag extends Fragment {
                     }
                 }) ;
 
+    }
+
+    private void logOut(){
+        myauth.signOut();
     }
 
 
