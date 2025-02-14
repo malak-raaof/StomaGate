@@ -50,6 +50,7 @@ public class LoginFrag extends Fragment {
 
     private FirebaseAuth myauth;
     private GoogleSignInClient mygoogle;
+    private View view;
 
 
     @Override
@@ -62,7 +63,7 @@ public class LoginFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login_me, container, false);
+        view = inflater.inflate(R.layout.fragment_login_me, container, false);
         txtPasswordLogin = view.findViewById(R.id.txtPasswordLogin);
         txtEmailLogin = view.findViewById(R.id.txtEmailLogin);
         textFieldPasswordLogin = view.findViewById(R.id.textFieldPasswordLogin);
@@ -122,6 +123,7 @@ public class LoginFrag extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(getActivity(), "Logged In successfully", Toast.LENGTH_LONG).show();
+                            Navigation.findNavController(view).navigate(R.id.action_loginFrag_to_homeFragment);
                         } else {
                             Toast.makeText(getActivity(), "Failed" + task.getException(), Toast.LENGTH_LONG).show();
                         }
@@ -161,6 +163,7 @@ public class LoginFrag extends Fragment {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(getActivity(), "Logged In With Google successfully", Toast.LENGTH_LONG).show();
+                        Navigation.findNavController(view).navigate(R.id.action_loginFrag_to_homeFragment);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

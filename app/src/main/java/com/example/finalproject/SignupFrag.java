@@ -29,6 +29,7 @@ public class SignupFrag extends Fragment {
     TextInputEditText txtPasswordSignup,txtConfirmPassword, txtEmailSignup;
     TextInputLayout textFieldPasswordSignUp,textFieldConfirmPassword, textFieldEmailSignup;
     private FirebaseAuth myauth;
+    private View view;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class SignupFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        view = inflater.inflate(R.layout.fragment_signup, container, false);
         txtLoginClick = view.findViewById(R.id.txtLoginClick);
         btnSignUp = view.findViewById(R.id.btnSignUp);
         txtPasswordSignup = view.findViewById(R.id.txtPasswordSignup);
@@ -104,6 +105,7 @@ public class SignupFrag extends Fragment {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(getActivity(),"Signed Up successfully", Toast.LENGTH_LONG).show();
+                        Navigation.findNavController(view).navigate(R.id.action_signupFrag_to_homeFragment);
                     }
                 })       .addOnFailureListener(new OnFailureListener() {
                     @Override

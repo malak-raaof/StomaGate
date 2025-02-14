@@ -3,6 +3,8 @@ plugins {
 
     // Add the Google services Gradle plugin
     id 'com.google.gms.google-services'
+    //safe args
+    id 'androidx.navigation.safeargs'
 
 }
 
@@ -43,13 +45,13 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.6.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    implementation 'androidx.navigation:navigation-fragment:2.8.6'
-    implementation 'androidx.navigation:navigation-ui:2.8.6'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
-
+    //Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.8.6'
+    implementation 'androidx.navigation:navigation-ui:2.8.6'
     //material design
     implementation 'com.google.android.material:material:<version>'
     //lottie
