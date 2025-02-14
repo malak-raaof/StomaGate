@@ -1,0 +1,55 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="410dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="230dp"
+    android:layout_marginEnd="40dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageButton6">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="220dp"
+        android:background="@color/Dark_Red">
+
+        <ImageView
+            android:id="@+id/imgviewCardHome"
+            android:layout_width="289dp"
+            android:layout_height="158dp"
+            android:layout_marginStart="28dp"
+
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintBottom_toTopOf="@+id/textviewCardHome"
+            app:layout_constraintEnd_toStartOf="@+id/imgbtnCardHeart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textviewCardHome"
+            android:layout_width="52dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="139dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="180dp"
+            android:layout_marginBottom="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgviewCardHome" />
+
+        <ImageButton
+            android:id="@+id/imgbtnCardHeart"
+            android:layout_width="39dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@color/Dark_Red"
+            android:src="@drawable/heart2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

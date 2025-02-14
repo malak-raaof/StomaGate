@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.LukaGenerated;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.finalproject.R;
 
 
 public class StartFrag extends Fragment {

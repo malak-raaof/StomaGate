@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.finalproject.SplashFragment"
+        android:name="com.example.finalproject.LukaGenerated.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/startFrag"
-        android:name="com.example.finalproject.StartFrag"
+        android:name="com.example.finalproject.LukaGenerated.StartFrag"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFrag"
-        android:name="com.example.finalproject.SignupFrag"
+        android:name="com.example.finalproject.LukaGenerated.SignupFrag"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFrag"
-        android:name="com.example.finalproject.LoginFrag"
+        android:name="com.example.finalproject.LukaGenerated.LoginFrag"
         android:label="fragment_login_me"
         tools:layout="@layout/fragment_login_me" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.finalproject.HomeFragment"
+        android:name="com.example.finalproject.LukaGenerated.HomeFragment"
         android:label="fragment_home_me"
         tools:layout="@layout/fragment_home_me" />
 </navigation>

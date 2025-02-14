@@ -24,7 +24,7 @@
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/Theme.FinalProject.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LukaGenerated.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

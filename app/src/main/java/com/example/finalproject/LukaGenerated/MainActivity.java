@@ -1,10 +1,12 @@
-package com.example.finalproject;
+package com.example.finalproject.LukaGenerated;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+
+import com.example.finalproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
