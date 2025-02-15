@@ -57,5 +57,18 @@
         android:id="@+id/homeFragment"
         android:name="com.example.finalproject.LukaGenerated.HomeStuff.HomeFragment"
         android:label="fragment_home_me"
-        tools:layout="@layout/fragment_home_me" />
+        tools:layout="@layout/fragment_home_me" >
+        <action
+            android:id="@+id/action_homeFragment_to_foodInfoFragment"
+            app:destination="@id/foodInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodInfoFragment"
+        android:name="com.example.finalproject.LukaGenerated.InfoStuff.FoodInfoFragment"
+        android:label="fragment_food_info"
+        tools:layout="@layout/fragment_food_info" >
+        <argument
+            android:name="randomMeal"
+            app:argType="com.example.finalproject.LukaGenerated.RandomMeal" />
+    </fragment>
 </navigation>

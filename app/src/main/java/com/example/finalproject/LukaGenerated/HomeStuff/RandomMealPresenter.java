@@ -1,6 +1,6 @@
 package com.example.finalproject.LukaGenerated.HomeStuff;
 
-import com.example.finalproject.LukaGenerated.MealRepository;
+import com.example.finalproject.LukaGenerated.Generic.MealRepository;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -16,7 +16,7 @@ public class RandomMealPresenter {
         this.repo = repo;
     }
 
-    public void getMeal(){repo.getRandomMeal()
+    public void getMeal(){repo.getRandomMealRepo()
             .subscribeOn(Schedulers.io())
             .map(item -> item.getMeals())
             .observeOn((AndroidSchedulers.mainThread()))

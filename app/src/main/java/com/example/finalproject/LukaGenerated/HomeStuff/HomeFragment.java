@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.finalproject.LukaGenerated.MealRepository;
-import com.example.finalproject.LukaGenerated.Network.RandomMealRemoteDataSource;
+import com.example.finalproject.LukaGenerated.Generic.MealRepository;
+import com.example.finalproject.LukaGenerated.Generic.Network.RemoteDataSource;
 import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.R;
 
@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment implements RandomMealInterface {
         reckviewHome.setLayoutManager(layoutManager);
 
         randomMealPresenter = new RandomMealPresenter(this,
-                MealRepository.getInstance(RandomMealRemoteDataSource.getInstance()));
+                MealRepository.getInstance(RemoteDataSource.getInstance()));
 
         randomMealPresenter.getMeal();
 

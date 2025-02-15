@@ -10,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -54,15 +56,15 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
                 .into(holder.imgviewCardHome);
 
         Log.i(TAG,"=======onBindViewHolder=========");
-        holder.imgbtnCardHeart.setOnClickListener(new View.OnClickListener() {
+
+        holder.constriantHomeCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.imgbtnCardHeart.isSelected()) {
-                    holder.imgbtnCardHeart.setColorFilter(ContextCompat.getColor(context, R.color.white));
-                } else {
-                    holder.imgbtnCardHeart.setColorFilter(ContextCompat.getColor(context, R.color.Dark_Red));
-                }
-                holder.imgbtnCardHeart.setSelected(!holder.imgbtnCardHeart.isSelected());
+
+                HomeFragmentDirections.ActionHomeFragmentToFoodInfoFragment action =
+                        HomeFragmentDirections.actionHomeFragmentToFoodInfoFragment(current);
+                Navigation.findNavController(view).navigate(action);
+
             }
         });
 
@@ -86,8 +88,7 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
 
         ImageView imgviewCardHome;
         TextView textviewCardHome;
-
-        ImageButton imgbtnCardHeart;
+        ConstraintLayout constriantHomeCard;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -95,7 +96,7 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
 
             imgviewCardHome = itemView.findViewById(R.id.imgviewCardHome);
             textviewCardHome = itemView.findViewById(R.id.textviewCardHome);
-            imgbtnCardHeart = itemView.findViewById(R.id.imgbtnCardHeart);
+            constriantHomeCard = itemView.findViewById(R.id.constriantHomeCard);
         }
     }
 }

@@ -128,4 +128,8 @@
     <string name="signupbtn">Sign Up</string>
     <string name="alreadylogintxt">Already have an account ? LogIn here</string>
     <string name="default_web_client_id">975034736189-rprsbrti4p2eje9091rmogpfnv9cgj2l.apps.googleusercontent.com</string>
+    <string name="OriginInfoPage">Origin Country:</string>
+    <string name="steps">Steps:-</string>
+    <string name="ingredients"><![CDATA[Ingredients & Measures:-]]></string>
+    <string name="video">Illustration Video</string>
 </resources>

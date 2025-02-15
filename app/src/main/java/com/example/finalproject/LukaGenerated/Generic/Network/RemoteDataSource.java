@@ -1,4 +1,4 @@
-package com.example.finalproject.LukaGenerated.Network;
+package com.example.finalproject.LukaGenerated.Generic.Network;
 
 
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
@@ -9,19 +9,19 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 //Networking Code
-public class RandomMealRemoteDataSource {
+public class RemoteDataSource {
 
 
     public static final String TAG = "MealClient";
     private static final String BASE_URL = "https://www.themealdb.com/api/json/v1/1/";
 
-    private static RandomMealRemoteDataSource client = null;
+    private static RemoteDataSource client = null;
 
-    private RandomMealService randomMealService;
+    private Service mealService;
 
 
 
-    private RandomMealRemoteDataSource(){
+    private RemoteDataSource(){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -30,20 +30,20 @@ public class RandomMealRemoteDataSource {
                 .build();
 
 
-        randomMealService = retrofit.create(RandomMealService.class);
+        mealService = retrofit.create(Service.class);
 
     }
 
 
-    public static RandomMealRemoteDataSource getInstance(){
+    public static RemoteDataSource getInstance(){
         if(client == null){
-            client = new RandomMealRemoteDataSource();
+            client = new RemoteDataSource();
         }
         return client;
     }
 
-    public Single<RandomMealResponse> makeNetworkCall() {
-        Single<RandomMealResponse> myCall = randomMealService.getMeals();
+    public Single<RandomMealResponse> makeRandomNetworkCall() {
+        Single<RandomMealResponse> myCall = mealService.getRandomMealService();
         return myCall;
     }
 
