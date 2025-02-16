@@ -11,8 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.R;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class FoodInfoAdapter extends RecyclerView.Adapter<FoodInfoAdapter.MyViewHolder> {
@@ -21,10 +22,10 @@ public class FoodInfoAdapter extends RecyclerView.Adapter<FoodInfoAdapter.MyView
     private List<String> ingredients;
     private List<String> measures;
 
-    public FoodInfoAdapter(Context context, List<String> ingredients, List<String> measures) {
+    public FoodInfoAdapter(Context context, RandomMeal randomMeal) {
         this.context = context;
-        this.ingredients = ingredients;
-        this.measures = measures;
+        this.ingredients = randomMeal.getIngredients();
+        this.measures = randomMeal.getMeasures();
     }
 
     @NonNull
@@ -54,7 +55,7 @@ public class FoodInfoAdapter extends RecyclerView.Adapter<FoodInfoAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return (ingredients != null) ? ingredients.size() : 0;  // Return the number of ingredients
+        return ingredients.size();  // Return the number of ingredients
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

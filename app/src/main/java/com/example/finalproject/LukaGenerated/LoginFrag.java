@@ -47,7 +47,7 @@ public class LoginFrag extends Fragment {
     TextInputLayout textFieldEmailLogin, textFieldPasswordLogin;
 
     TextView txtSignupClick;
-    Button btnLogin, btnGoogle;
+    Button btnLogin, btnGoogle, btnGuest;
 
     private FirebaseAuth myauth;
     private GoogleSignInClient mygoogle;
@@ -72,6 +72,7 @@ public class LoginFrag extends Fragment {
         txtSignupClick = view.findViewById(R.id.txtSignupClick);
         btnLogin = view.findViewById(R.id.btnLogin);
         btnGoogle = view.findViewById(R.id.btnGoogle);
+        btnGuest = view.findViewById(R.id.btnGuest);
 
         myauth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = myauth.getCurrentUser();
@@ -111,6 +112,10 @@ public class LoginFrag extends Fragment {
 
         btnGoogle.setOnClickListener(v -> {
             googleLogIn();
+        });
+
+        btnGuest.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.action_loginFrag_to_homeFragment);
         });
 
 

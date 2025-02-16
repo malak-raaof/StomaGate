@@ -47,4 +47,9 @@ public class RemoteDataSource {
         return myCall;
     }
 
+    public Single<RandomMealResponse> makeMealIdNetworkCall(String mealId) {
+        Single<RandomMealResponse> myCall = mealService.getMealByIdService(mealId);
+        return myCall;
+    }
+
 }

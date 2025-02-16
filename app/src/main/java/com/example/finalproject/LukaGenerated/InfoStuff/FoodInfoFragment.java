@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.R;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -48,6 +49,7 @@ public class FoodInfoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_food_info, container, false);
 
         RandomMeal randomMeal = FoodInfoFragmentArgs.fromBundle(getArguments()).getRandomMeal();
+        randomMeal.extractIngredientsAndMeasures();
 
         reckviewIngredients = view.findViewById(R.id.reckviewIngredients);
         imgviewMealInfo = view.findViewById(R.id.imgviewMealInfo);
@@ -87,14 +89,17 @@ public class FoodInfoFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
-        List<String> ingredients = randomMeal.getIngredients(); // Get the ingredient list
-        List<String> measures = randomMeal.getMeasures();       // Get the measure list
+        //List<String> ingredients = randomMeal.getIngredients(); // Get the ingredient list
+        //List<String> measures = randomMeal.getMeasures();       // Get the measure list
 
+        randomMeal.extractIngredientsAndMeasures();
+
+        Log.d(TAG, "Full API Response: " + new Gson().toJson(randomMeal));
         Log.d(TAG, "Ingredients: " + randomMeal.getIngredients());
         Log.d(TAG, "Measures: " + randomMeal.getMeasures());
 
 
-        foodInfoAdapter = new FoodInfoAdapter(getContext(), ingredients, measures);
+        foodInfoAdapter = new FoodInfoAdapter(getContext(), randomMeal);
         reckviewIngredients.setAdapter(foodInfoAdapter);
         reckviewIngredients.setLayoutManager(layoutManager);
 

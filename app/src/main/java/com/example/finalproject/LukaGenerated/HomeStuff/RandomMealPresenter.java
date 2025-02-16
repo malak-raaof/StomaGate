@@ -22,5 +22,4 @@ public class RandomMealPresenter {
             .observeOn((AndroidSchedulers.mainThread()))
             .subscribe(meallist -> view.showData(meallist));}
 
-
 }

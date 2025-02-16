@@ -26,5 +26,7 @@ public class MealRepository {
 
     public Single<RandomMealResponse> getRandomMealRepo(){ return remoteDataSource.makeRandomNetworkCall(); }
 
+    public Single<RandomMealResponse> getMealByIdRepo(String mealId) { return remoteDataSource.makeMealIdNetworkCall(mealId); }
+
 
 }
