@@ -132,4 +132,8 @@
     <string name="steps">Steps:-</string>
     <string name="ingredients"><![CDATA[Ingredients & Measures:-]]></string>
     <string name="video">Illustration Video</string>
+    <string name="favpage">Favourites Page</string>
+    <string name="categoty">Category</string>
+    <string name="area">Area</string>
+    <string name="ingredient">Ingredient</string>
 </resources>

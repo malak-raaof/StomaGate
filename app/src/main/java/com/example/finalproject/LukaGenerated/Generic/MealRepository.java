@@ -1,5 +1,6 @@
 package com.example.finalproject.LukaGenerated.Generic;
 
+import com.example.finalproject.LukaGenerated.CategoryPojo.CategoryResponse;
 import com.example.finalproject.LukaGenerated.Generic.Network.RemoteDataSource;
 import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
@@ -36,6 +37,7 @@ public class MealRepository {
 
     public Single<RandomMealResponse> getMealByIdRepo(String mealId) { return remoteDataSource.makeMealIdNetworkCall(mealId); }
 
+    public Single<CategoryResponse> getCategotyRepo(){ return remoteDataSource.makeCategoryNetworkCall(); }
     public Completable insertMealRepo(RandomMeal meal){ return localDataSource.insertLocal(meal);}
 
     public Completable deleteMealRepo(RandomMeal meal){ return localDataSource.deleteLocal(meal);}

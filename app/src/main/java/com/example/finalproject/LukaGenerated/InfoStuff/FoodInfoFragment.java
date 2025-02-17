@@ -128,7 +128,7 @@ public class FoodInfoFragment extends Fragment implements RandomMealInterface {
                     Toast.makeText(getContext(),"Product Added To Favourites",Toast.LENGTH_SHORT).show();
                     randomMealPresenter.addToFav(randomMeal);
                 }
-                imgbtnCardHeart.setSelected(!imgbtnCardHeart.isSelected());
+                //imgbtnCardHeart.setSelected(!imgbtnCardHeart.isSelected());
 
 
             }

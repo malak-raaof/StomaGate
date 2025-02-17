@@ -14,12 +14,12 @@
         <!-- 🍽 Meal Info Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="375dp"
+            android:layout_height="221dp"
             android:layout_margin="16dp"
+            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="20dp"
             app:cardElevation="12dp"
-            app:cardBackgroundColor="@android:color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -34,8 +34,8 @@
                     android:id="@+id/imgviewMealInfo"
                     android:layout_width="0dp"
                     android:layout_height="160dp"
-                    android:scaleType="centerCrop"
                     android:background="@drawable/rounded_image_bg"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toTopOf="@+id/textviewMealName"
                     app:layout_constraintEnd_toStartOf="@+id/imgbtnCardHeart"
                     app:layout_constraintStart_toStartOf="parent"
@@ -57,11 +57,11 @@
                     android:id="@+id/textviewMealName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
                     android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:fontFamily="sans-serif-medium"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

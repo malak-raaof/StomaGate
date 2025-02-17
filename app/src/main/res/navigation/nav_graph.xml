@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_homeFragment_to_foodInfoFragment"
             app:destination="@id/foodInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodInfoFragment"
@@ -72,4 +75,9 @@
             app:argType="com.example.finalproject.LukaGenerated.RandomMeal" />
 
     </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.finalproject.LukaGenerated.FavouriteStuff.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" />
 </navigation>

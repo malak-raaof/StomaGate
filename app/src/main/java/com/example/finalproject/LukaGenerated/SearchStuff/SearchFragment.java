@@ -1,4 +1,4 @@
-package com.example.finalproject.LukaGenerated;
+package com.example.finalproject.LukaGenerated.SearchStuff;
 
 import android.os.Bundle;
 

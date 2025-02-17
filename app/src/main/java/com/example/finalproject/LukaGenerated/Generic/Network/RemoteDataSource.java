@@ -1,6 +1,7 @@
 package com.example.finalproject.LukaGenerated.Generic.Network;
 
 
+import com.example.finalproject.LukaGenerated.CategoryPojo.CategoryResponse;
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
 
 import io.reactivex.rxjava3.core.Single;
@@ -49,6 +50,11 @@ public class RemoteDataSource {
 
     public Single<RandomMealResponse> makeMealIdNetworkCall(String mealId) {
         Single<RandomMealResponse> myCall = mealService.getMealByIdService(mealId);
+        return myCall;
+    }
+
+    public Single<CategoryResponse> makeCategoryNetworkCall() {
+        Single<CategoryResponse> myCall = mealService.getCategories();
         return myCall;
     }
 
