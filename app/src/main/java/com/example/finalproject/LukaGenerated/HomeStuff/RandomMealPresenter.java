@@ -1,6 +1,7 @@
 package com.example.finalproject.LukaGenerated.HomeStuff;
 
 import com.example.finalproject.LukaGenerated.Generic.MealRepository;
+import com.example.finalproject.LukaGenerated.RandomMeal;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -20,6 +21,13 @@ public class RandomMealPresenter {
             .subscribeOn(Schedulers.io())
             .map(item -> item.getMeals())
             .observeOn((AndroidSchedulers.mainThread()))
-            .subscribe(meallist -> view.showData(meallist));}
+            .subscribe(meallist -> view.showData(meallist));
+    }
+
+    public void addToFav(RandomMeal meal) { repo.insertMealRepo(meal)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe();
+    }
 
 }

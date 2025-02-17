@@ -2,16 +2,25 @@ package com.example.finalproject.LukaGenerated;
 
 import android.util.Log;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.annotation.NonNull;
+import androidx.room.TypeConverters;
+
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.finalproject.LukaGenerated.Generic.Converters;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "my_meal_table")
 public class RandomMeal implements Serializable {
 
+        @PrimaryKey
+        @NonNull
         private String idMeal;
         private String strMeal;
         private String strCategory;
@@ -21,54 +30,56 @@ public class RandomMeal implements Serializable {
         private String strTags;
         private String strYoutube;
         private String strSource;
+        @TypeConverters(Converters.class)
         private List<String> ingredients;
+        @TypeConverters(Converters.class)
         private List<String> measures;
 
 
 
-    // Ingredients
-    private String strIngredient1;
-    private String strIngredient2;
-    private String strIngredient3;
-    private String strIngredient4;
-    private String strIngredient5;
-    private String strIngredient6;
-    private String strIngredient7;
-    private String strIngredient8;
-    private String strIngredient9;
-    private String strIngredient10;
-    private String strIngredient11;
-    private String strIngredient12;
-    private String strIngredient13;
-    private String strIngredient14;
-    private String strIngredient15;
-    private String strIngredient16;
-    private String strIngredient17;
-    private String strIngredient18;
-    private String strIngredient19;
-    private String strIngredient20;
+        // Ingredients
+        private String strIngredient1;
+        private String strIngredient2;
+        private String strIngredient3;
+        private String strIngredient4;
+        private String strIngredient5;
+        private String strIngredient6;
+        private String strIngredient7;
+        private String strIngredient8;
+        private String strIngredient9;
+        private String strIngredient10;
+        private String strIngredient11;
+        private String strIngredient12;
+        private String strIngredient13;
+        private String strIngredient14;
+        private String strIngredient15;
+        private String strIngredient16;
+        private String strIngredient17;
+        private String strIngredient18;
+        private String strIngredient19;
+        private String strIngredient20;
 
-    // Measures
-    private String strMeasure1;
-    private String strMeasure2;
-    private String strMeasure3;
-    private String strMeasure4;
-    private String strMeasure5;
-    private String strMeasure6;
-    private String strMeasure7;
-    private String strMeasure8;
-    private String strMeasure9;
-    private String strMeasure10;
-    private String strMeasure11;
-    private String strMeasure12;
-    private String strMeasure13;
-    private String strMeasure14;
-    private String strMeasure15;
-    private String strMeasure16;
-    private String strMeasure17;
-    private String strMeasure18;
-    private String strMeasure19;
-    private String strMeasure20;
+        // Measures
+        private String strMeasure1;
+        private String strMeasure2;
+        private String strMeasure3;
+        private String strMeasure4;
+        private String strMeasure5;
+        private String strMeasure6;
+        private String strMeasure7;
+        private String strMeasure8;
+        private String strMeasure9;
+        private String strMeasure10;
+        private String strMeasure11;
+        private String strMeasure12;
+        private String strMeasure13;
+        private String strMeasure14;
+        private String strMeasure15;
+        private String strMeasure16;
+        private String strMeasure17;
+        private String strMeasure18;
+        private String strMeasure19;
+        private String strMeasure20;
 
 
 

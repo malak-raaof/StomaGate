@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.finalproject.LukaGenerated.Generic.LocalDataSource;
 import com.example.finalproject.LukaGenerated.Generic.MealRepository;
 import com.example.finalproject.LukaGenerated.Generic.Network.RemoteDataSource;
 import com.example.finalproject.LukaGenerated.RandomMeal;
@@ -44,17 +46,22 @@ public class HomeFragment extends Fragment implements RandomMealInterface {
 
         layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        randomMealPresenter = new RandomMealPresenter(this,
+                MealRepository.getInstance(RemoteDataSource.getInstance(),
+                        LocalDataSource.getInstance(getContext())));
+
         randomMealAdapter = new RandomMealAdapter(getContext(),new ArrayList<>());
         reckviewHome.setAdapter(randomMealAdapter);
         reckviewHome.setLayoutManager(layoutManager);
 
-        randomMealPresenter = new RandomMealPresenter(this,
-                MealRepository.getInstance(RemoteDataSource.getInstance()));
+
 
         randomMealPresenter.getMeal();
 
         return view;
     }
+
 
     @Override
     public void showData(List<RandomMeal> randomMeals) {

@@ -1,5 +1,5 @@
 package com.example.finalproject.LukaGenerated;
-import com.example.finalproject.LukaGenerated.TrialPojo.Meal;
+
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 

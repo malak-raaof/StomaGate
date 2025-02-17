@@ -15,15 +15,21 @@ import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.finalproject.LukaGenerated.Generic.LocalDataSource;
+import com.example.finalproject.LukaGenerated.Generic.MealRepository;
+import com.example.finalproject.LukaGenerated.Generic.Network.RemoteDataSource;
+import com.example.finalproject.LukaGenerated.HomeStuff.RandomMealInterface;
+import com.example.finalproject.LukaGenerated.HomeStuff.RandomMealPresenter;
 import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.R;
 import com.google.gson.Gson;
 
 import java.util.List;
 
-public class FoodInfoFragment extends Fragment {
+public class FoodInfoFragment extends Fragment implements RandomMealInterface {
 
     ImageButton imgbtnCardHeart;
     ImageView imgviewMealInfo;
@@ -32,6 +38,8 @@ public class FoodInfoFragment extends Fragment {
     RecyclerView reckviewIngredients;
     LinearLayoutManager layoutManager;
     FoodInfoAdapter foodInfoAdapter;
+    RandomMealPresenter randomMealPresenter;
+
 
     public static final String TAG = "FoodInfoFrag";
 
@@ -47,6 +55,10 @@ public class FoodInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_food_info, container, false);
+
+        randomMealPresenter = new RandomMealPresenter(this,
+                MealRepository.getInstance(RemoteDataSource.getInstance(),
+                        LocalDataSource.getInstance(getContext())));
 
         RandomMeal randomMeal = FoodInfoFragmentArgs.fromBundle(getArguments()).getRandomMeal();
         randomMeal.extractIngredientsAndMeasures();
@@ -113,12 +125,19 @@ public class FoodInfoFragment extends Fragment {
                     imgbtnCardHeart.setColorFilter(ContextCompat.getColor(getContext(), R.color.white));
                 } else {
                     imgbtnCardHeart.setColorFilter(ContextCompat.getColor(getContext(), R.color.Dark_Red));
+                    Toast.makeText(getContext(),"Product Added To Favourites",Toast.LENGTH_SHORT).show();
+                    randomMealPresenter.addToFav(randomMeal);
                 }
                 imgbtnCardHeart.setSelected(!imgbtnCardHeart.isSelected());
+
+
             }
         });
 
         return view;
 
     }
+
+    @Override
+    public void showData(List<RandomMeal> randomMeals) {}
 }

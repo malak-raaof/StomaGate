@@ -70,5 +70,6 @@
         <argument
             android:name="randomMeal"
             app:argType="com.example.finalproject.LukaGenerated.RandomMeal" />
+
     </fragment>
 </navigation>

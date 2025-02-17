@@ -28,6 +28,7 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
 
     private ArrayList<RandomMeal> randomMeals;
 
+
     public static final String TAG = "RandomMealAdapter";
 
     public RandomMealAdapter(Context context, ArrayList<RandomMeal> randomMeals) {
