@@ -1,7 +1,9 @@
 package com.example.finalproject.LukaGenerated.Generic.Network;
 
 
-import com.example.finalproject.LukaGenerated.CategoryPojo.CategoryResponse;
+import com.example.finalproject.LukaGenerated.Pojos.AreaPojo.AreaResponse;
+import com.example.finalproject.LukaGenerated.Pojos.CategoryPojo.CategoryResponse;
+import com.example.finalproject.LukaGenerated.Pojos.IngredientPojo.IngredientResponse;
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
 
 import io.reactivex.rxjava3.core.Single;
@@ -54,7 +56,33 @@ public class RemoteDataSource {
     }
 
     public Single<CategoryResponse> makeCategoryNetworkCall() {
-        Single<CategoryResponse> myCall = mealService.getCategories();
+        Single<CategoryResponse> myCall = mealService.getCategoriesService();
+        return myCall;
+    }
+
+    public Single<IngredientResponse> makeIngredientNetworkCall() {
+        Single<IngredientResponse> myCall = mealService.getIngredientsService();
+        return myCall;
+    }
+
+    public Single<AreaResponse> makeAreaNetworkCall() {
+        Single<AreaResponse> myCall = mealService.getAreasService();
+        return myCall;
+    }
+
+
+    public Single<RandomMealResponse> makeMealCategoryNetworkCall(String category) {
+        Single<RandomMealResponse> myCall = mealService.getMealsByCategoryService(category);
+        return myCall;
+    }
+
+    public Single<RandomMealResponse> makeMealIngredientNetworkCall(String ingredient) {
+        Single<RandomMealResponse> myCall = mealService.getMealsByIngredientService(ingredient);
+        return myCall;
+    }
+
+    public Single<RandomMealResponse> makeMealAreaNetworkCall(String area) {
+        Single<RandomMealResponse> myCall = mealService.getMealsByAreaService(area);
         return myCall;
     }
 

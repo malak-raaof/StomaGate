@@ -1,4 +1,4 @@
-package com.example.finalproject.LukaGenerated.CategoryPojo;
+package com.example.finalproject.LukaGenerated.Pojos.CategoryPojo;
 
 
 import com.google.gson.annotations.SerializedName;

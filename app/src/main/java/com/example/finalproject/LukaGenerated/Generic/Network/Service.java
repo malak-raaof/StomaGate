@@ -1,6 +1,8 @@
 package com.example.finalproject.LukaGenerated.Generic.Network;
 
-import com.example.finalproject.LukaGenerated.CategoryPojo.CategoryResponse;
+import com.example.finalproject.LukaGenerated.Pojos.AreaPojo.AreaResponse;
+import com.example.finalproject.LukaGenerated.Pojos.CategoryPojo.CategoryResponse;
+import com.example.finalproject.LukaGenerated.Pojos.IngredientPojo.IngredientResponse;
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
 
 import io.reactivex.rxjava3.core.Single;
@@ -15,9 +17,23 @@ public interface Service {
     @GET("lookup.php")
     Single<RandomMealResponse> getMealByIdService(@Query("i") String mealId);
 
-
     @GET("categories.php")
-    Single<CategoryResponse> getCategories();
+    Single<CategoryResponse> getCategoriesService();
+
+    @GET("list.php?i=list")
+    Single<IngredientResponse> getIngredientsService();
+
+    @GET("list.php?a=list")
+    Single<AreaResponse> getAreasService();
+
+    @GET("filter.php")
+    Single<RandomMealResponse> getMealsByCategoryService(@Query("c") String categoryName);
+
+    @GET("filter.php")
+    Single<RandomMealResponse> getMealsByIngredientService(@Query("i") String ingredientName);
+
+    @GET("filter.php")
+    Single<RandomMealResponse> getMealsByAreaService(@Query("a") String areaName);
 
 
 }

@@ -1,4 +1,4 @@
-package com.example.finalproject.LukaGenerated.TrialPojo;
+package com.example.finalproject.LukaGenerated.Pojos.TrialPojo;
 
 import java.io.Serializable;
 import com.google.gson.annotations.SerializedName;

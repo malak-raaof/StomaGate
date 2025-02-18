@@ -3,6 +3,9 @@ package com.example.finalproject.LukaGenerated.SearchStuff;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,7 +15,12 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.finalproject.LukaGenerated.SearchStuff.Adapters.AreaAdapter;
+import com.example.finalproject.LukaGenerated.SearchStuff.Adapters.CategoryAdapter;
+import com.example.finalproject.LukaGenerated.SearchStuff.Adapters.IngredientAdapter;
 import com.example.finalproject.R;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +36,21 @@ public class SearchFragment extends Fragment {
 
     private EditText searchInput;
     private TextView resultsView;
+    ChipGroup chipGroup;
+    private Chip chipIngredient,chipArea,chipCategory;
+    private RecyclerView searchReckView;
+    CategoryAdapter categoryAdapter;
+
+    IngredientAdapter ingredientAdapter;
+
+    AreaAdapter areaAdapter;
+
+    GridLayoutManager layoutManager;
+
+    SearchPresenter searchPresenter;
+
+    public static final String TAG = "SearchFrag";
+
 
     List<String> Names = Arrays.asList(
             "Abdelaziz Zizo", "Abdelrahman Atia", "Abdelrahman Kamel", "Ebram",
@@ -53,6 +76,18 @@ public class SearchFragment extends Fragment {
 
         searchInput = view.findViewById(R.id.searchInput);
         resultsView = view.findViewById(R.id.resultsView);
+
+
+        searchReckView = view.findViewById(R.id.searchReckView);
+        chipGroup = view.findViewById(R.id.chipGroup);
+        layoutManager = new LinearLayoutManager(getContext());
+        //LinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        //oldlist = Arrays.asList(new MobileData().getAllMobiles());
+        //adapter = new MyRecyclerAdapter(this, oldlist);
+        searchReckView.setLayoutManager(layoutManager);
+        searchReckView.setAdapter(categoryAdapter);
+
+        setupFilterChips();
 
         Observable<String> searchObservable = Observable.create(emitter -> {
             searchInput.addTextChangedListener(new TextWatcher() {

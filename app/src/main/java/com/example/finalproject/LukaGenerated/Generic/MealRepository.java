@@ -1,7 +1,9 @@
 package com.example.finalproject.LukaGenerated.Generic;
 
-import com.example.finalproject.LukaGenerated.CategoryPojo.CategoryResponse;
+import com.example.finalproject.LukaGenerated.Pojos.AreaPojo.AreaResponse;
+import com.example.finalproject.LukaGenerated.Pojos.CategoryPojo.CategoryResponse;
 import com.example.finalproject.LukaGenerated.Generic.Network.RemoteDataSource;
+import com.example.finalproject.LukaGenerated.Pojos.IngredientPojo.IngredientResponse;
 import com.example.finalproject.LukaGenerated.RandomMeal;
 import com.example.finalproject.LukaGenerated.RandomMealResponse;
 
@@ -37,11 +39,21 @@ public class MealRepository {
 
     public Single<RandomMealResponse> getMealByIdRepo(String mealId) { return remoteDataSource.makeMealIdNetworkCall(mealId); }
 
-    public Single<CategoryResponse> getCategotyRepo(){ return remoteDataSource.makeCategoryNetworkCall(); }
     public Completable insertMealRepo(RandomMeal meal){ return localDataSource.insertLocal(meal);}
 
     public Completable deleteMealRepo(RandomMeal meal){ return localDataSource.deleteLocal(meal);}
 
+    public Single<CategoryResponse> getCategoryRepo(){ return remoteDataSource.makeCategoryNetworkCall(); }
+
+    public Single<IngredientResponse> getIngredientRepo(){ return remoteDataSource.makeIngredientNetworkCall(); }
+
+    public Single<AreaResponse> getAreaRepo(){ return remoteDataSource.makeAreaNetworkCall(); }
+
+    public Single<RandomMealResponse> getMealByCategoryRepo(String category){ return remoteDataSource.makeMealCategoryNetworkCall(category); }
+
+    public Single<RandomMealResponse> getMealByIngredientRepo(String ingredient){ return remoteDataSource.makeMealIngredientNetworkCall(ingredient); }
+
+    public Single<RandomMealResponse> getMealByAreaRepo(String area){ return remoteDataSource.makeMealAreaNetworkCall(area); }
 
 
 
