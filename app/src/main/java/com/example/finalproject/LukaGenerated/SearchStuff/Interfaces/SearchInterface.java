@@ -1,4 +1,4 @@
-package com.example.finalproject.LukaGenerated.SearchStuff;
+package com.example.finalproject.LukaGenerated.SearchStuff.Interfaces;
 
 import com.example.finalproject.LukaGenerated.Pojos.AreaPojo.Area;
 import com.example.finalproject.LukaGenerated.Pojos.CategoryPojo.Category;

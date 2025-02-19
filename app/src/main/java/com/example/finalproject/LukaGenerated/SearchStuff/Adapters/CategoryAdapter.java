@@ -37,8 +37,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         this.listener = listener;
     }
 
-    public void setList(List<Category> categories) {
+    public CategoryAdapter(Context context,List<Category> categories) {
+        this.context = context;
         this.categories = categories;
+    }
+
+    public void setList(List<Category> categories) {
+        this.categories.clear();
+        this.categories.addAll(categories);
         notifyDataSetChanged();
     }
 

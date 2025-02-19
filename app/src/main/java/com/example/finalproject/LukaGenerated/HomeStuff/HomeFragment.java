@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment implements RandomMealInterface {
     RandomMealAdapter randomMealAdapter;
     RandomMealPresenter randomMealPresenter;
     LinearLayoutManager layoutManager;
-    Button btnFavSwitch;
+    Button btnFavSwitch,btnSearchSwitch;
 
     public static final String TAG = "HomeFrag";
 
@@ -47,6 +47,7 @@ public class HomeFragment extends Fragment implements RandomMealInterface {
         View view = inflater.inflate(R.layout.fragment_home_me, container, false);
         reckviewHome = view.findViewById(R.id.reckviewHome);
         btnFavSwitch = view.findViewById(R.id.btnFavSwitch);
+        btnSearchSwitch = view.findViewById(R.id.btnSearchSwitch);
 
         layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -64,6 +65,11 @@ public class HomeFragment extends Fragment implements RandomMealInterface {
 
         btnFavSwitch.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_favouritesFragment);
+
+        });
+
+        btnSearchSwitch.setOnClickListener(v -> {
+            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_searchFragment);
 
         });
 

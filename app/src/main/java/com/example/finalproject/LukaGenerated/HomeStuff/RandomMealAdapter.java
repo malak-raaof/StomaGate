@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.finalproject.LukaGenerated.RandomMeal;
+import com.example.finalproject.LukaGenerated.SearchStuff.OnMealClickListener;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;
@@ -28,12 +29,22 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
 
     private ArrayList<RandomMeal> randomMeals;
 
+    private OnMealClickListener listener;
+    private Boolean isFavItem;
+
 
     public static final String TAG = "RandomMealAdapter";
 
     public RandomMealAdapter(Context context, ArrayList<RandomMeal> randomMeals) {
         this.context = context;
         this.randomMeals = randomMeals;
+    }
+
+    public RandomMealAdapter(Context context, ArrayList<RandomMeal> randomMeals, OnMealClickListener listener, Boolean isFavItem) {
+        this.context = context;
+        this.randomMeals = randomMeals;
+        this.listener = listener;
+        this.isFavItem = isFavItem;
     }
 
 
@@ -61,6 +72,8 @@ public class RandomMealAdapter extends RecyclerView.Adapter<RandomMealAdapter.My
         holder.constriantHomeCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (listener != null) { listener.onMealClick(current);}
 
                 HomeFragmentDirections.ActionHomeFragmentToFoodInfoFragment action =
                         HomeFragmentDirections.actionHomeFragmentToFoodInfoFragment(current);

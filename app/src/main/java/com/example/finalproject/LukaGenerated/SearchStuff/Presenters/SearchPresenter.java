@@ -1,9 +1,10 @@
-package com.example.finalproject.LukaGenerated.SearchStuff;
+package com.example.finalproject.LukaGenerated.SearchStuff.Presenters;
 
 import com.example.finalproject.LukaGenerated.Pojos.AreaPojo.Area;
 import com.example.finalproject.LukaGenerated.Pojos.CategoryPojo.Category;
 import com.example.finalproject.LukaGenerated.Generic.MealRepository;
 import com.example.finalproject.LukaGenerated.Pojos.IngredientPojo.Ingredient;
+import com.example.finalproject.LukaGenerated.SearchStuff.Interfaces.SearchInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,5 +109,7 @@ public class SearchPresenter {
             }
         }
     }
+
+
 
 }
